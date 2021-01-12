@@ -27,8 +27,10 @@ class Project:
     def delete(self):
         pass
 
-    def get_all(self):
-        pass
+    @staticmethod
+    def get_all(headers, payload):
+        projects = AzureDevOps(headers, payload)
+        return projects.get_request()  # { 'name' : 'Projeto', 'description': 'Descricao'}
 
     def get_by_id(self):
         pass

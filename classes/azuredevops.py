@@ -58,3 +58,10 @@ class AzureDevOps:
                 return f'Other error occurred: {err}'
         except Exception as err:
             return f'Other error occurred: {err}'
+
+    def get_request(self):
+        try:
+            projects = self._handle_request("GET", self.url, self.headers, self.payload)
+            return projects
+        except Exception as err:
+            return f'Other error occurred: {err}'
